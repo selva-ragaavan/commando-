@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <string.h>
-#include "adding.h"
+#include "header.h"
 
 #define maxtask 8
 #define maxlength 25
 
+char input[10];
 char task[8][25];  // Corrected declaration
 
-int main() {
-    char* argv[2] = {"add", "do the homework"};
-    const int argc = sizeof(argv) / sizeof(char*);
-    
-    char *result = add(argc, argv);
-    printf("%s\n", result);   // Output the result
+int  main(int argc,char *argv[]) {
 
-    printf("Stored task: %s\n", task[0]);  // Verify task storage
-    return 0;
+    char *result = add(argc-1,&argv[1]); // adding function calling
+    char *showtask = show(argc-2,&argv[1],task);
+    printf("%S",result);
+    // adding input logic 
+
+
+    
 }

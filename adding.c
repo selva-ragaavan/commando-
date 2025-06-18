@@ -1,13 +1,25 @@
 #include <string.h>
-#include "adding.h"
+#include <stdio.h>
+#include "header.h"
 
 extern char task[8][25];
 
+
 char * add(int argc , char *argv[]) {
-    if (argc > 1 && strcmp(argv[0], "add") == 0) {
-        strncpy(task[0], argv[1], 24);
-        task[0][24] = '\0';
-        return "task added successfully";
+    static int n =  0;
+    if(n<8){
+        if(argc > 1 && strcmp(argv[0], "add") == 0) {
+        strncpy(task[n], argv[1], 24);
+        task[n][24] = '\0';
+        n++;
+        printf("task added successfully %S",task[n]);
     }
-    return "invalid arguments";
-}
+        else return "invalid arguments";
+
+    }
+    else return "Complete the existing ones first";
+    
+    }
+
+    
+
