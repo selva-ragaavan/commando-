@@ -15,6 +15,4 @@ int  main(int argc,char *argv[]) {
     printf("%S",result);
     // adding input logic 
 
-
-    
 }
