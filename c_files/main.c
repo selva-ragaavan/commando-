@@ -9,19 +9,15 @@ char input[10];
 char task[8][25];  // Corrected declaration
 
 int  main(int argc,char *argv[]) {
+    if(argc == 1){
+        printf("invalid input is carried out");
+    }
+    else if(argc > 1 && strcmp(argv[1], "add") == 0){
+        char *add_result = add(argc-1,&argv[1]);
+        printf("%S",add_result);
+        
 
-   // char *result = add(argc-1,&argv[1]); 
-   // char *showtask = show(argc,&argv[1],task);
-   //add(argc-1,&argv[1]);
-   //show(argc-1,&argv[0],task);
-   add(argc-1,&argv[1]);
-   printf("%S",task[0]);
-   printf("%S",task[1]);
-   printf("%S",task[2]);
-   printf("%S",task[3]);
-   printf("%S",task[4]);
-   printf("%S",task[5]);
-
+    }
 
 
 }
