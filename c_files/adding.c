@@ -1,9 +1,11 @@
 #include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "header.h"
 
 extern char task[8][25];
 static int n = 0;
+FILE* ptr;
 
 
 
@@ -12,11 +14,18 @@ static int n = 0;
 
 char * add(int argc , char *argv[]) {
     if(n<=8){
-        strncpy(task[n], argv[1], 24);
-        task[n][24] = '\0';
+        ptr = fopen("tasks.txt", "a");
+        if(ptr == NULL){
+            printf("error f*ile could not be opened");
+            return NULL;
+        }
+        fputs(argv[1], ptr);
+        fputs("\n",ptr);
+        fclose(ptr);
         n= n+1;
-        printf("task added successfully");
-        printf("%S",task[0]);
+        return "Task added successfully.\n";
+        
+       
         
     }
     else{
@@ -27,3 +36,4 @@ char * add(int argc , char *argv[]) {
     }
     
 
+//
