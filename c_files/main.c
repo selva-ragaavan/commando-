@@ -5,8 +5,6 @@
 #define maxtask 8
 #define maxlength 25
 
-char input[10];
-char task[8][25];  // Corrected declaration
 
 int  main(int argc,char *argv[]) {
     if(argc == 1){
@@ -22,7 +20,12 @@ int  main(int argc,char *argv[]) {
 
     }
     else if(argc > 1 && strcmp(argv[1],"delete")==0){
+        //delete();
         
+    }
+    else if(argc > 1 && strcmp(argv[1],"showtask")==0){
+        char *showtask = show(argc-1,&argv[0]);
+
     }
 
 
