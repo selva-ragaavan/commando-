@@ -35,15 +35,17 @@ char *delete(int argc , char *argv[]){
 
 }
 
-
+int showno = 0;
 // function to show existing tasks 
 char * show(int argc ,char *argv[]){
-    if (file != NULL){
-        file = fopen("tasks.txt","r");
-        while (fgets(line,sizeof(line),file)){
-            printf("%S",line);
+    ptr = fopen("tasks.txt", "r");
+    if (ptr != NULL){
+        
+        while (fgets(line,sizeof(line),ptr)){
+            showno++;
+            printf("%d)%s",showno,line);
         }
-        fclose(file);
+        fclose(ptr);
     }
     else{
         printf("Unable to open file!\n");
