@@ -20,7 +20,10 @@ int  main(int argc,char *argv[]) {
 
     }
     else if(argc > 1 && strcmp(argv[1],"delete")==0){
-        //delete();
+        char *delete = delete(argc-1,&argv[0]);
+
+
+        
         
     }
     else if(argc > 1 && strcmp(argv[1],"showtask")==0){

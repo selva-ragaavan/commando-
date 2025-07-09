@@ -52,3 +52,8 @@ char * show(int argc ,char *argv[]){
     }
 
 }
+
+char * delete(int argc , char *argv[]){
+    char array[8][256];
+    
+}
