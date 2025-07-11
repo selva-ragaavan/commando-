@@ -6,7 +6,7 @@
 char line[256];
 static int n = 0;
 FILE* ptr; // file pointer for adding  functionality 
-FILE* file;
+
  // file pointer for showtask functionality 
 
 // adding task function 
@@ -29,11 +29,7 @@ char * add(int argc , char *argv[]) {
     }
     }
     
-// deleting task function 
-char *delete(int argc , char *argv[]){
 
-
-}
 
 int showno = 0;
 // function to show existing tasks 
@@ -43,7 +39,7 @@ char * show(int argc ,char *argv[]){
         
         while (fgets(line,sizeof(line),ptr)){
             showno++;
-            printf("%d)%s",showno,line);
+            printf("%d) %s/n",showno,line);
         }
         fclose(ptr);
     }
@@ -54,6 +50,5 @@ char * show(int argc ,char *argv[]){
 }
 
 char * delete(int argc , char *argv[]){
-    char array[8][256];
     
 }

@@ -18,16 +18,15 @@ int  main(int argc,char *argv[]) {
             printf("Unknown error occurred.\n");
         
 
-    }
+
     else if(argc > 1 && strcmp(argv[1],"delete")==0){
-        char *delete = delete(argc-1,&argv[0]);
+        delete(argc-1,&argv[1]);
+    }
 
-
-        
-        
     }
     else if(argc > 1 && strcmp(argv[1],"showtask")==0){
         char *showtask = show(argc-1,&argv[0]);
+        showtask;
         
 
     }
