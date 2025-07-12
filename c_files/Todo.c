@@ -32,7 +32,6 @@ char * add(int argc , char *argv[]) {
 
 
 int showno = 0;
-// function to show existing tasks 
 char * show(int argc ,char *argv[]){
     ptr = fopen("tasks.txt", "r");
     if (ptr != NULL){
@@ -48,7 +47,24 @@ char * show(int argc ,char *argv[]){
     }
 
 }
+char array[8][256];
+void insertarray(void){
+    ptr = fopen("tasks.txt","r");
+    if(ptr != NULL){
+        int index = 0;
+        while (fgets(line,sizeof(line),ptr)){
+            strcpy(array[index], line);
+            index++;
+        }
+        fclose(ptr);
+    }
+    else{
+        printf("unable to open file!\n");
+    }
+
+}
 
 char * delete(int argc , char *argv[]){
-    
+    insertarray();
+    printf("%S",array[0]);
 }
