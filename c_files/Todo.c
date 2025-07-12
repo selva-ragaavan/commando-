@@ -5,11 +5,8 @@
 
 char line[256];
 static int n = 0;
-FILE* ptr; // file pointer for adding  functionality 
-
- // file pointer for showtask functionality 
-
-// adding task function 
+FILE* ptr;
+const char *file = "tasks.txt";  
 
 char * add(int argc , char *argv[]) {
     if(n<=8){
@@ -53,6 +50,7 @@ void insertarray(void){
     if(ptr != NULL){
         int index = 0;
         while (fgets(line,sizeof(line),ptr)){
+            line[strcspn(line, "\n")] = 0;
             strcpy(array[index], line);
             index++;
         }
@@ -65,6 +63,23 @@ void insertarray(void){
 }
 
 char * delete(int argc , char *argv[]){
-    insertarray();
-    printf("%S",array[0]);
-}
+    int del_taskno = argv[1]-1;
+    if(remove(file) == 0){
+        ptr = fopen("tasks.txt","a");
+        for(int i =0;i<=7;i++){
+            if(i != del_taskno){
+                fputs(array[i],ptr);
+                fputs("/n",ptr);
+            }
+            else{
+                continue;
+            }
+
+        }
+        fclose(ptr);
+
+    }
+
+    }
+    
+    
